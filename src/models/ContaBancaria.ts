@@ -10,11 +10,17 @@ export class ContaBancaria {
     if (valor > 0) {
       this.#saldo += valor;
     }
+    else{
+      throw new Error('O valor do depósito deve ser maior que zero.');
+    }
   }
 
   sacar(valor: number) {
     if (valor <= this.#saldo) {
       this.#saldo -= valor;
+    }
+    else{
+      throw new Error('O valor do saque deve ser maior que zero.');
     }
   }
 
