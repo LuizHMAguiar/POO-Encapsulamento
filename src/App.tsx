@@ -1,12 +1,12 @@
 import './App.css'
+import { ContaBancaria } from './models/ContaBancaria';
 
 function App() {
-  
-  return (
-    <>
-      
-    </>
-  )
+  const conta = new ContaBancaria();
+  conta.depositar(100);
+  conta.sacar(40);
+
+  return <p>Saldo disponível: {conta.verSaldo()}</p>;
 }
 
-export default App
+export default App;
